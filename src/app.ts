@@ -1,25 +1,12 @@
-///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
-
-import 'angular2/bundles/angular2-polyfills';
+import {MaterializeDirective} from 'angular2-materialize';
 import {Component} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
+
+import "angular2-materialize";
 
 @Component({
     selector: 'app',
-    template: `<div>
-                   <input (keyup)="onKeyUp(input)" #input placeholder="Type Here">
-                   {{message}}
-               </div>`
+    templateUrl: 'app.html',
+    directives: [MaterializeDirective]
 })
-export class App {
-
-    message = "";
-
-    onKeyUp(input) {
-        this.message = input.value;
-    }
-
+export class AppComponent {
 }
-
-
-bootstrap(App);
